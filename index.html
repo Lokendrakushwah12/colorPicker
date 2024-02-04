@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
-    <!-- tailwind -->
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +14,26 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+    <div class="container w-[full] h-screen flex flex-col items-center justify-center">
+        <div class="picker flex items-center justify-center text-[#ffffffdc] w-[300px] h-[80px] px-12 py-4 text-[24px] font-[400] bg-[#191919] cursor-pointer hover:bg-[#212121] transition-all">
+            <h1>Pick New Color</h1>
+        </div>
+        <div class="options flex w-[300px] justify-between">
+            <h1>Picked Colors</h1>
+            <h1 class="cursor-pointer">Clear all</h1>
+        </div>
+        <div class="selected">
+            <div class="color flex items-center justify-center text-[#ffffffd1] w-[300px] h-[50px] px-12 py-4 text-[24px] font-[400] bg-[#ff8989] cursor-pointer hover:text-[#fff] transition-all">
+                <h1>#ff8989</h1>
+            </div>
+            <div class="color flex items-center justify-center text-[#ffffffd1] w-[300px] h-[50px] px-12 py-4 text-[24px] font-[400] bg-[#c1ff92] cursor-pointer hover:text-[#fff] transition-all">
+                <h1>#c1ff92</h1>
+            </div>
+            <div class="color flex items-center justify-center text-[#ffffffd1] w-[300px] h-[50px] px-12 py-4 text-[24px] font-[400] bg-[#b692ff] cursor-pointer hover:text-[#fff] transition-all">
+                <h1>#b692ff</h1>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
