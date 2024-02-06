@@ -20,13 +20,21 @@ const copyColor = (ele) => {
     }, 500);
 }
 const DisplayColors = () => {
-    if (PickedColors.length === 0) return;
     colorContainer.innerHTML = PickedColors.map((hex) =>
-        `<div class="ele h-[50px] flex items-center justify-center cursor-pointer bg-[${hex}] text-[#000000d1] hover:text-[#000]">${hex}</div>`
+        `<div class="ele h-[60px] flex items-center justify-center cursor-pointer bg-[${hex}] text-[#000000d1] hover:text-[#000]">${hex}</div>`
     ).join("");
 
     document.querySelectorAll('.ele').forEach((ele) => {
         ele.style.backgroundColor = ele.innerHTML;
+        // text color difference
+        ele.style.color = parseInt(ele.innerHTML.replace('#', ''), 16) > 0xffffff / 1.1 ? '#000000d1' : '#ffffffd1';
+        // color of text on hover
+        ele.addEventListener('mouseover', () => {
+            ele.style.color = parseInt(ele.innerHTML.replace('#', ''), 16) > 0xffffff / 1.1 ? '#000' : '#ffffff';
+        });
+        ele.addEventListener('mouseout', () => {
+            ele.style.color = parseInt(ele.innerHTML.replace('#', ''), 16) > 0xffffff / 1.1 ? '#000000d1' : '#ffffffd1';
+        });
         ele.addEventListener('click', (e) => {
             copyColor(e.target);
         });
